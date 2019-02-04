@@ -38,6 +38,6 @@ app.post('/register', register.handleRegister(db, bcrypt, utility));
 app.get('/profile/:id', profile.handleProfile(db, utility));
 app.put('/image', image.handleImage(db, utility));
 
-app.listen(PORT, () => {
+app.listen(PORT || 3000, () => {
     console.log(`app is running on port ${PORT}`);
 });

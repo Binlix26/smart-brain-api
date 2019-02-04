@@ -15,10 +15,8 @@ const utility = require('./tools/tools').utility;
 const db = require('knex')({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
-        user: 'binlix26',
-        password: '',
-        database: 'smart-brain'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 

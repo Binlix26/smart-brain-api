@@ -34,7 +34,7 @@ const handleRegister = (db, bcrypt, utility) => (req, res) => {
                                 joined: new Date()
                             })
                             .then(user => {
-                                res.json(user[0])
+                                utility.sendUserWithRank(user[0].id, res, db);
                             })
                     })
                     .then(trx.commit)
